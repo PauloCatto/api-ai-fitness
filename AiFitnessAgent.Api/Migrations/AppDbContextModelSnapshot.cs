@@ -29,6 +29,12 @@ namespace AiFitnessAgent.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<int?>("Age")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("DaysPerWeek")
+                        .HasColumnType("integer");
+
                     b.Property<string>("DisplayName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -37,9 +43,27 @@ namespace AiFitnessAgent.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("FitnessLevel")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Goal")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Injuries")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Limitations")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("OnboardingCompleted")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<double?>("Weight")
+                        .HasColumnType("double precision");
 
                     b.HasKey("Id");
 

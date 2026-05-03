@@ -6,4 +6,14 @@ public class User
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
     public string DisplayName { get; set; } = string.Empty;
+
+    // Onboarding fields
+    public bool OnboardingCompleted { get; set; } = false;
+    public int? Age { get; set; }
+    public double? Weight { get; set; }
+    public string? Goal { get; set; }
+    public string? FitnessLevel { get; set; }
+    public string? Limitations { get; set; } // JSON array as string
+    public string? Injuries { get; set; }
+    public int? DaysPerWeek { get; set; }
 }
