@@ -1,11 +1,11 @@
 # 🚀 AiFitnessAgent.Api
 
-[![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/download)
+[![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/download)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql)](https://neon.tech)
 [![JWT](https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge&logo=json-web-tokens)](https://jwt.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-O **AiFitnessAgent.Api** é o núcleo de processamento robusto por trás do AI Fitness Agent. Desenvolvido com **ASP.NET Core 9**, ele fornece uma infraestrutura escalável, segura e integrada com Inteligência Artificial para gerenciar planos de treino, perfis de usuários e persistência de dados.
+O **AiFitnessAgent.Api** é o núcleo de processamento robusto por trás do AI Fitness Agent. Desenvolvido com **ASP.NET Core 10**, ele fornece uma infraestrutura escalável, segura e integrada com Inteligência Artificial para gerenciar planos de treino, perfis de usuários e persistência de dados.
 
 ## 🧠 Arquitetura e Decisões Técnicas
 
@@ -19,12 +19,12 @@ O backend foi desenhado seguindo princípios de **Clean Architecture** e **Separ
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Runtime**: .NET 9 (última versão estável)
-- **Framework**: ASP.NET Core Web API
-- **Banco de Dados**: PostgreSQL (Hospedado no Neon.tech para escalabilidade serverless)
-- **ORM**: Entity Framework Core 9
-- **Segurança**: Microsoft.AspNetCore.Authentication.JwtBearer
-- **IA**: Integração com Google Gemini Pro (via API Rest)
+- **Runtime**: .NET 10 (última versão estável)
+- **Framework**: ASP.NET Core Web API 10
+- **Banco de Dados**: PostgreSQL (Hospedado no Neon.tech)
+- **ORM**: Entity Framework Core 10
+- **Segurança**: JWT Bearer + BCrypt.Net
+- **IA**: Integração Nativa com Google Gemini 2.5 Flash
 
 ## 📁 Estrutura do Projeto
 
@@ -42,7 +42,7 @@ AiFitnessAgent.Api/
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- .NET 9 SDK instalado.
+- .NET 10 SDK instalado.
 - Instância de PostgreSQL (recomendado Neon.tech).
 
 ### Instalação
