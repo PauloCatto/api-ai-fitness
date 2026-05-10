@@ -10,4 +10,7 @@ public class OnboardingDto
     public List<string> Limitations { get; set; } = [];
     public string Injuries { get; set; } = string.Empty;
     public int DaysPerWeek { get; set; }
+    public string WorkoutSplit { get; set; } = string.Empty;
+    public List<string> FocusAreas { get; set; } = [];
+    public int CardioMinutes { get; set; }
 }
