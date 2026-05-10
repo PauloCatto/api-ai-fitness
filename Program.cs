@@ -30,8 +30,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
+        var cleanUrl = frontendUrl.TrimEnd('/');
         policy.WithOrigins(
-                frontendUrl,
+                cleanUrl,
+                cleanUrl + "/",
                 "http://localhost:4200"
               )
               .AllowAnyHeader()
