@@ -20,6 +20,8 @@ var frontendUrl =
     builder.Configuration["FRONTEND_URL"]
     ?? "http://localhost:4200";
 
+Console.WriteLine($"[CONFIG] Frontend URL permitida: {frontendUrl}");
+
 //
 // =========================
 // CORS
@@ -34,6 +36,8 @@ builder.Services.AddCors(options =>
         policy.WithOrigins(
                 cleanUrl,
                 cleanUrl + "/",
+                "https://ai-fitness-agent.vercel.app", // Fallback explícito
+                "https://ai-fitness-agent.vercel.app/",
                 "http://localhost:4200"
               )
               .AllowAnyHeader()
