@@ -85,6 +85,9 @@ namespace AiFitnessAgent.Api.Migrations
                     b.Property<int?>("Age")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("CardioMinutes")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("DaysPerWeek")
                         .HasColumnType("integer");
 
@@ -97,6 +100,9 @@ namespace AiFitnessAgent.Api.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("FitnessLevel")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FocusAreas")
                         .HasColumnType("text");
 
                     b.Property<string>("Goal")
@@ -118,9 +124,35 @@ namespace AiFitnessAgent.Api.Migrations
                     b.Property<double?>("Weight")
                         .HasColumnType("double precision");
 
+                    b.Property<string>("WorkoutSplit")
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users", "fitness");
+                });
+
+            modelBuilder.Entity("AiFitnessAgent.Api.Models.WorkoutPlan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("GeneratedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("PlanData")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("WorkoutPlans", "fitness");
                 });
 
             modelBuilder.Entity("AiFitnessAgent.Api.Models.Conversation", b =>
@@ -143,6 +175,17 @@ namespace AiFitnessAgent.Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Conversation");
+                });
+
+            modelBuilder.Entity("AiFitnessAgent.Api.Models.WorkoutPlan", b =>
+                {
+                    b.HasOne("AiFitnessAgent.Api.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("AiFitnessAgent.Api.Models.Conversation", b =>

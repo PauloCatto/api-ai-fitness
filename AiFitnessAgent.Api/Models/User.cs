@@ -16,4 +16,7 @@ public class User
     public string? Limitations { get; set; } // JSON array as string
     public string? Injuries { get; set; }
     public int? DaysPerWeek { get; set; }
+    public string? WorkoutSplit { get; set; } // ex: Full Body, ABC, Push/Pull/Legs
+    public string? FocusAreas { get; set; } // JSON array of muscle groups
+    public int? CardioMinutes { get; set; }
 }
