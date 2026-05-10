@@ -7,12 +7,13 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CORS — permite o frontend Angular em localhost:4200
+// CORS — permite o frontend Angular em localhost e na URL de produção
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        var frontendUrl = builder.Configuration["FRONTEND_URL"] ?? "http://localhost:4200";
+        policy.WithOrigins(frontendUrl, "http://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
