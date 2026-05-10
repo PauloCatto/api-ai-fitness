@@ -34,4 +34,4 @@ bld/
 ## Others
 .DS_Store
 appsettings.json
-!appsettings.Development.json
+appsettings.Development.json
