@@ -2,7 +2,7 @@
 
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/download)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql)](https://neon.tech)
-[![JWT](https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge&logo=json-web-tokens)](https://jwt.io)
+[![Render](https://img.shields.io/badge/Render-Deployed-262626?style=for-the-badge&logo=render)](https://api-ai-fitness.onrender.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 O **AiFitnessAgent.Api** é o núcleo de processamento robusto por trás do AI Fitness Agent. Desenvolvido com **ASP.NET Core 10**, ele fornece uma infraestrutura escalável, segura e integrada com Inteligência Artificial para gerenciar planos de treino, perfis de usuários e persistência de dados.
@@ -25,6 +25,7 @@ O backend foi desenhado seguindo princípios de **Clean Architecture** e **Separ
 - **ORM**: Entity Framework Core 10
 - **Segurança**: JWT Bearer + BCrypt.Net
 - **IA**: Integração Nativa com Google Gemini 2.5 Flash
+- **Deploy**: [Render (api-ai-fitness.onrender.com)](https://api-ai-fitness.onrender.com)
 
 ## 📁 Estrutura do Projeto
 
@@ -45,7 +46,18 @@ AiFitnessAgent.Api/
 - .NET 10 SDK instalado.
 - Instância de PostgreSQL (recomendado Neon.tech).
 
-### Instalação
+### 🌐 Ambiente de Produção
+A API está rodando em: `https://api-ai-fitness.onrender.com`
+Documentação OpenAPI: `https://api-ai-fitness.onrender.com/openapi/v1.json`
+
+### 🔑 Variáveis de Ambiente Necessárias (Render)
+Para o funcionamento correto no deploy, configure as seguintes variáveis:
+- `Jwt__Key`: Sua chave secreta JWT
+- `Jwt__Issuer`: api-ai-fitness
+- `Jwt__Audience`: api-ai-fitness-users
+- `ConnectionStrings__DefaultConnection`: String do Postgres (formato Host=...)
+- `Gemini__ApiKey`: Chave do Google AI
+- `FRONTEND_URL`: URL da Vercel (sem barra final)
 
 1.  Clone o repositório.
 2.  Configure a string de conexão no `appsettings.json`:
