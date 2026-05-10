@@ -42,6 +42,9 @@ public class UsersController : ControllerBase
         user.Limitations = JsonSerializer.Serialize(dto.Limitations);
         user.Injuries = dto.Injuries;
         user.DaysPerWeek = dto.DaysPerWeek;
+        user.WorkoutSplit = dto.WorkoutSplit;
+        user.FocusAreas = JsonSerializer.Serialize(dto.FocusAreas);
+        user.CardioMinutes = dto.CardioMinutes;
         user.OnboardingCompleted = true;
 
         await _context.SaveChangesAsync();
@@ -57,6 +60,9 @@ public class UsersController : ControllerBase
             user.Goal,
             user.FitnessLevel,
             user.DaysPerWeek,
+            user.WorkoutSplit,
+            FocusAreas = dto.FocusAreas,
+            user.CardioMinutes,
             Limitations = dto.Limitations
         });
     }
@@ -83,6 +89,9 @@ public class UsersController : ControllerBase
         user.Limitations = JsonSerializer.Serialize(dto.Limitations);
         user.Injuries = dto.Injuries;
         user.DaysPerWeek = dto.DaysPerWeek;
+        user.WorkoutSplit = dto.WorkoutSplit;
+        user.FocusAreas = JsonSerializer.Serialize(dto.FocusAreas);
+        user.CardioMinutes = dto.CardioMinutes;
 
         await _context.SaveChangesAsync();
 
@@ -97,6 +106,9 @@ public class UsersController : ControllerBase
             user.Goal,
             user.FitnessLevel,
             user.DaysPerWeek,
+            user.WorkoutSplit,
+            FocusAreas = dto.FocusAreas,
+            user.CardioMinutes,
             Limitations = dto.Limitations
         });
     }
@@ -126,6 +138,11 @@ public class UsersController : ControllerBase
             user.Goal,
             user.FitnessLevel,
             user.DaysPerWeek,
+            user.WorkoutSplit,
+            FocusAreas = string.IsNullOrEmpty(user.FocusAreas)
+                ? new List<string>()
+                : JsonSerializer.Deserialize<List<string>>(user.FocusAreas),
+            user.CardioMinutes,
             Limitations = string.IsNullOrEmpty(user.Limitations) 
                 ? new List<string>() 
                 : JsonSerializer.Deserialize<List<string>>(user.Limitations)
