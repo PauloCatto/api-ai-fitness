@@ -33,13 +33,26 @@ public class ConfigController : ControllerBase
     {
         return Ok(new
         {
+            Goals = new[]
+            {
+                new { Value = "hypertrophy", Label = "Hipertrofia", Icon = "💪", Description = "Foco em ganho de massa muscular" },
+                new { Value = "strength", Label = "Força", Icon = "🏋️", Description = "Aumento de força e potência" },
+                new { Value = "weight_loss", Label = "Emagrecimento", Icon = "🔥", Description = "Queima de gordura e definição" },
+                new { Value = "endurance", Label = "Resistência", Icon = "🏃", Description = "Condicionamento cardiovascular e estamina" }
+            },
+            Levels = new[]
+            {
+                new { Value = "beginner", Label = "Iniciante", Icon = "🌱", Description = "Começando agora ou retornando após muito tempo" },
+                new { Value = "intermediate", Label = "Intermediário", Icon = "⚡", Description = "Treina consistentemente há alguns meses" },
+                new { Value = "advanced", Label = "Avançado", Icon = "🔥", Description = "Treina seriamente e de forma estruturada há anos" }
+            },
             Splits = new[]
             {
-                new { Value = "ai_choice", Label = "Escolha da IA" },
-                new { Value = "full_body", Label = "Corpo Inteiro (Full Body)" },
-                new { Value = "push_pull_legs", Label = "Empurrar/Puxar/Pernas (PPL)" },
-                new { Value = "upper_lower", Label = "Superior/Inferior (Upper/Lower)" },
-                new { Value = "bro_split", Label = "ABCDE (Músculo por dia)" }
+                new { Value = "ai_choice", Label = "Escolha da IA", Icon = "🤖", Description = "Deixe a IA analisar seu perfil e escolher a melhor divisão" },
+                new { Value = "full_body", Label = "Corpo Inteiro (Full Body)", Icon = "🤸", Description = "Treina o corpo todo a cada sessão" },
+                new { Value = "push_pull_legs", Label = "Empurrar/Puxar/Pernas (PPL)", Icon = "⚖️", Description = "Divide por padrão de movimento" },
+                new { Value = "upper_lower", Label = "Superior/Inferior (Upper/Lower)", Icon = "⬆️", Description = "Alterna entre membros superiores e inferiores" },
+                new { Value = "bro_split", Label = "ABCDE (Músculo por dia)", Icon = "💪", Description = "Foca intensamente em um grupo muscular por dia" }
             },
             MuscleGroups = new[]
             {
