@@ -17,6 +17,10 @@ public class AppDbContext : DbContext
     {
         modelBuilder.HasDefaultSchema("fitness");
 
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Email)
+            .IsUnique();
+
         modelBuilder.Entity<Conversation>(e =>
         {
             e.HasOne(c => c.User)
